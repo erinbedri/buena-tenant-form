@@ -1,4 +1,5 @@
 const PATHS = {
+    HOME: "/",
     NAME: "/name",
     EMAIL: "/email",
     PHONE: "/phone",

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Button } from "../components";
 
-const TenantNamePage: React.FC = () => {
+const NamePage: React.FC = () => {
     const [fullName, setFullName] = useState("");
     const navigate = useNavigate();
 
@@ -42,4 +42,4 @@ const TenantNamePage: React.FC = () => {
     );
 };
 
-export default TenantNamePage;
+export default NamePage;
