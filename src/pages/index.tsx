@@ -1,4 +1,4 @@
 import HomePage from "./HomePage";
-import TenantNamePage from "./TenantNamePage";
+import NamePage from "./NamePage";
 
-export { HomePage, TenantNamePage };
+export { HomePage, NamePage };
