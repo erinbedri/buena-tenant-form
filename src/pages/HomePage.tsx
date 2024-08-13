@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
                 Please complete the following steps to register and start booking apartments.
             </p>
 
-            <Link to="/name-info" className="text-white">
+            <Link to="/name" className="text-white">
                 <Button>Get Started</Button>
             </Link>
         </div>

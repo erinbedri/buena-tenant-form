@@ -13,7 +13,7 @@ const TenantNamePage: React.FC = () => {
         // continue with logic here
         console.log({ fullName });
 
-        navigate("/email-info");
+        navigate("/email");
     };
 
     return (
