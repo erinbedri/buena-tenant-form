@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Button } from "../components";
+import { PATHS } from "../utils/urls";
 
 const EmailPage: React.FC = () => {
     const navigate = useNavigate();
@@ -11,7 +12,7 @@ const EmailPage: React.FC = () => {
 
         console.log("Submit");
 
-        navigate("/phone");
+        navigate(PATHS.PHONE);
     };
 
     return (
