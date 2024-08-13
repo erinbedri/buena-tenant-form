@@ -19,11 +19,13 @@ const TenantNamePage: React.FC = () => {
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-6">
             <h2 className="text-3xl font-semibold mb-6">Enter Your Full Name</h2>
+
             <form onSubmit={handleSubmit} className="w-full max-w-md">
                 <div className="mb-4">
                     <label htmlFor="fullName" className="block text-lg font-medium mb-2">
                         Full Name
                     </label>
+
                     <input
                         type="text"
                         id="fullName"
@@ -33,6 +35,7 @@ const TenantNamePage: React.FC = () => {
                         className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
                     />
                 </div>
+
                 <Button type="submit">Next</Button>
             </form>
         </div>

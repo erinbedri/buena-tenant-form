@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import { Header } from "./components";
+import { Header, ProgressBar } from "./components";
 import { HomePage, TenantNamePage } from "./pages";
 
 function App() {
@@ -16,6 +16,8 @@ function App() {
                 <Route path="/salary-info" element={<h1>Salary Info Page</h1>} />
                 <Route path="/summary" element={<h1>Summary Page</h1>} />
             </Routes>
+
+            <ProgressBar />
         </Router>
     );
 }
