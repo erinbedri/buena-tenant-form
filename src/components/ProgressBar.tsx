@@ -2,10 +2,10 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 const steps = [
-    { name: "Name Info", path: "/name-info" },
-    { name: "Email Info", path: "/email-info" },
-    { name: "Phone Info", path: "/phone-info" },
-    { name: "Salary Info", path: "/salary-info" },
+    { name: "Name Info", path: "/name" },
+    { name: "Email Info", path: "/email" },
+    { name: "Phone Info", path: "/phone" },
+    { name: "Salary Info", path: "/salary" },
     { name: "Summary", path: "/summary" },
 ];
 
