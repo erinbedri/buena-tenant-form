@@ -23,11 +23,10 @@ const ProgressBar: React.FC = () => {
     }
 
     return (
-        <div className="fixed bottom-10 left-0 right-0 px-8 py-2 rounded-full overflow-hidden">
-            <div
-                className="bg-gray-600 text-xs font-medium text-gray-100 text-center p-1 leading-none rounded-full"
-                style={{ width: `${progressWidth}%` }}
-            ></div>
+        <div className="fixed bottom-10 left-0 right-0 px-8 py-2">
+            <div className="w-full bg-gray-300 h-4 rounded-full">
+                <div className="bg-gray-600 h-full rounded-full" style={{ width: `${progressWidth}%` }}></div>
+            </div>
         </div>
     );
 };
