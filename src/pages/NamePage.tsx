@@ -39,7 +39,8 @@ const NamePage: React.FC = () => {
 
                 <div className="flex gap-5">
                     <BackButton />
-                    <Button type="submit">Next</Button>
+
+                    {fullName && <Button type="submit">Next</Button>}
                 </div>
             </form>
         </div>
