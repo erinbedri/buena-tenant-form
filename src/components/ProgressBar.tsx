@@ -18,9 +18,13 @@ const ProgressBar: React.FC = () => {
 
     return (
         <div className="fixed bottom-10 left-0 right-0 px-8 py-2">
+            {/* Progress Bar */}
             <div className="w-full bg-gray-300 h-4 rounded-full">
                 <div className="bg-gray-600 h-full rounded-full" style={{ width: `${progressWidth}%` }}></div>
             </div>
+
+            {/* Progress Percentage */}
+            <div className="text-gray-700 mt-2 text-center w-full">{progressWidth.toFixed(0)}%</div>
         </div>
     );
 };
