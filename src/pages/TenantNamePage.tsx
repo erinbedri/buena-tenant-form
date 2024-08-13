@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { Button } from "../components";
+
 const TenantNamePage: React.FC = () => {
     const [fullName, setFullName] = useState("");
     const navigate = useNavigate();
@@ -31,12 +33,7 @@ const TenantNamePage: React.FC = () => {
                         className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
                     />
                 </div>
-                <button
-                    type="submit"
-                    className="w-full py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-700 focus:outline-none transition duration-300 focus:ring-2 focus:ring-gray-500"
-                >
-                    Next
-                </button>
+                <Button type="submit">Next</Button>
             </form>
         </div>
     );
