@@ -1,20 +1,14 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 
-const steps = [
-    { name: "Name Info", path: "/name" },
-    { name: "Email Info", path: "/email" },
-    { name: "Phone Info", path: "/phone" },
-    { name: "Salary Info", path: "/salary" },
-    { name: "Summary", path: "/summary" },
-];
+import { STEPS } from "../utils/urls";
 
 const ProgressBar: React.FC = () => {
     const location = useLocation();
     const currentPath = location.pathname;
 
-    const currentIndex = steps.findIndex((step) => step.path === currentPath);
-    const totalSteps = steps.length;
+    const currentIndex = STEPS.findIndex((step) => step.path === currentPath);
+    const totalSteps = STEPS.length;
 
     const progressWidth = totalSteps > 0 ? ((currentIndex + 1) / totalSteps) * 100 : 0;
 
