@@ -10,6 +10,7 @@ const BackButton: React.FC<BackButtonProps> = ({ className = "" }) => {
 
     return (
         <button
+            type="button"
             onClick={() => navigate(-1)}
             className={`p-2 bg-gray-300 hover:bg-gray-400 transition duration-300 ease-in-out text-gray-800 rounded-full shadow-md ${className}`}
         >
