@@ -1,6 +1,7 @@
 import React from "react";
 
 interface TextInputProps {
+    type: string;
     label: string;
     id: string;
     value: string;
@@ -8,14 +9,14 @@ interface TextInputProps {
     required?: boolean;
 }
 
-const TextInput: React.FC<TextInputProps> = ({ label, id, value, onChange, required = false }) => {
+const TextInput: React.FC<TextInputProps> = ({ type, label, id, value, onChange, required = false }) => {
     return (
         <div className="mb-4">
             <label htmlFor={id} className="block text-lg font-medium mb-2">
                 {label}
             </label>
             <input
-                type="text"
+                type={type}
                 id={id}
                 value={value}
                 onChange={onChange}

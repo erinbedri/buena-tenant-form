@@ -7,7 +7,7 @@ import { PATHS } from "../utils/urls";
 
 const NamePage: React.FC = () => {
     const { userInfo, setUserInfo } = useUserInfoContext();
-    const [fullName, setFullName] = useState(userInfo.fullName || "");
+    const [fullName, setFullName] = useState(userInfo.fullName);
 
     const navigate = useNavigate();
 
@@ -19,8 +19,6 @@ const NamePage: React.FC = () => {
         navigate(PATHS.EMAIL);
     };
 
-    console.log("User Info", userInfo);
-
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-6">
             <h2 className="text-3xl font-semibold mb-6">Enter Your Full Name</h2>
@@ -28,6 +26,7 @@ const NamePage: React.FC = () => {
             <form onSubmit={handleSubmit} className="w-full max-w-xl">
                 <TextInput
                     id="fullName"
+                    type="text"
                     label="Full Name"
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
