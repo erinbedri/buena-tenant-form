@@ -1,25 +1,29 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import { UserInfoContextProvider } from "./contexts/UserInfoContext";
+
 import { Header, ProgressBar } from "./components";
 import { HomePage, NamePage, EmailPage } from "./pages";
 import { PATHS } from "./utils/urls";
 
 function App() {
     return (
-        <Router>
-            <Header />
+        <UserInfoContextProvider>
+            <Router>
+                <Header />
 
-            <Routes>
-                <Route path={PATHS.HOME} element={<HomePage />} />
-                <Route path={PATHS.NAME} element={<NamePage />} />
-                <Route path={PATHS.EMAIL} element={<EmailPage />} />
-                <Route path={PATHS.PHONE} element={<h1>Phone Info Page</h1>} />
-                <Route path={PATHS.SALARY} element={<h1>Salary Info Page</h1>} />
-                <Route path={PATHS.SUMMARY} element={<h1>Summary Page</h1>} />
-            </Routes>
+                <Routes>
+                    <Route path={PATHS.HOME} element={<HomePage />} />
+                    <Route path={PATHS.NAME} element={<NamePage />} />
+                    <Route path={PATHS.EMAIL} element={<EmailPage />} />
+                    <Route path={PATHS.PHONE} element={<h1>Phone Info Page</h1>} />
+                    <Route path={PATHS.SALARY} element={<h1>Salary Info Page</h1>} />
+                    <Route path={PATHS.SUMMARY} element={<h1>Summary Page</h1>} />
+                </Routes>
 
-            <ProgressBar />
-        </Router>
+                <ProgressBar />
+            </Router>
+        </UserInfoContextProvider>
     );
 }
 

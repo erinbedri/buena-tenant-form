@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useUserInfoContext } from "../contexts/UserInfoContext";
 import { BackButton, Button } from "../components";
 import { PATHS } from "../utils/urls";
 
 const NamePage: React.FC = () => {
-    const [fullName, setFullName] = useState("");
+    const { userInfo, setUserInfo } = useUserInfoContext();
+
+    const [fullName, setFullName] = useState(userInfo.fullName);
     const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // continue with logic here
-        console.log({ fullName });
+        setUserInfo({ ...userInfo, fullName });
 
         navigate(PATHS.EMAIL);
     };
