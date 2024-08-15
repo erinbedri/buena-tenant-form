@@ -7,9 +7,10 @@ interface TextInputProps {
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     required?: boolean;
+    pattern?: string;
 }
 
-const TextInput: React.FC<TextInputProps> = ({ type, label, id, value, onChange, required = false }) => {
+const TextInput: React.FC<TextInputProps> = ({ type, label, id, value, onChange, required = false, pattern }) => {
     return (
         <div className="mb-4">
             <label htmlFor={id} className="block text-lg font-medium mb-2">
@@ -22,6 +23,7 @@ const TextInput: React.FC<TextInputProps> = ({ type, label, id, value, onChange,
                 onChange={onChange}
                 required={required}
                 className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
+                pattern={pattern}
             />
         </div>
     );
