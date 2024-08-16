@@ -5,6 +5,7 @@ interface UserInfo {
     email: string;
     phone: string;
     salary: string;
+    [key: string]: any;
 }
 
 interface AppContextProps {
