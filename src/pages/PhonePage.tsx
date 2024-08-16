@@ -9,6 +9,7 @@ const PhonePage: React.FC = () => {
             fieldLabel="Phone Number"
             fieldType="tel"
             nextPath={PATHS.SALARY}
+            pattern="^(\+49\s?)?[1-9][0-9]{1,4}\s?-?\s?[0-9]{3,9}$"
         />
     );
 };
