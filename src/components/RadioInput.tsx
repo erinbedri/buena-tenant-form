@@ -9,26 +9,36 @@ interface RadioInputProps {
     required?: boolean;
 }
 
-const RadioInput: React.FC<RadioInputProps> = ({ label: fieldLabel, fieldName, options, selectedValue, onChange }) => {
+const RadioInput: React.FC<RadioInputProps> = ({
+    label: fieldLabel,
+    fieldName,
+    options,
+    selectedValue,
+    onChange,
+    required = false,
+}) => {
     return (
-        <div className="mb-4">
-            <label className="block text-lg font-medium mb-2">{fieldLabel}</label>
-            {options.map((option) => (
-                <div key={option} className="mb-2">
-                    <input
-                        type="radio"
-                        id={option}
-                        name={fieldName}
-                        value={option}
-                        checked={selectedValue === option}
-                        onChange={onChange}
-                        className="mr-2"
-                    />
-                    <label htmlFor={option} className="text-gray-700">
-                        {option}
-                    </label>
-                </div>
-            ))}
+        <div className="mb-6">
+            <label className="block text-lg font-medium mb-4">{fieldLabel}</label>
+            <div className="flex flex-col gap-3">
+                {options.map((option) => (
+                    <div key={option} className="flex items-center">
+                        <input
+                            type="radio"
+                            id={option}
+                            name={fieldName}
+                            value={option}
+                            checked={selectedValue === option}
+                            onChange={onChange}
+                            className="form-radio text-gray-700 focus:ring-gray-500"
+                            required={required}
+                        />
+                        <label htmlFor={option} className="ml-2 text-gray-700">
+                            {option}
+                        </label>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 };

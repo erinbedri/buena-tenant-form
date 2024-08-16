@@ -63,7 +63,7 @@ const Form: React.FC<FormProps> = ({
                     />
                 )}
 
-                <div className="flex gap-5">
+                <div className="flex justify-center gap-5">
                     <BackButton />
                     {fieldValue && <Button type="submit">Next</Button>}
                 </div>

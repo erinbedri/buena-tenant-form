@@ -6,18 +6,18 @@ const SummaryPage: React.FC = () => {
 
     return (
         <Container title="Summary" titleSize="text-3xl">
-            <div>
-                <p>
-                    <b>Full Name:</b> {userInfo.fullName}
+            <div className="space-y-3">
+                <p className="text-lg">
+                    <span className="font-medium">Full Name:</span> {userInfo.fullName}
                 </p>
-                <p>
-                    <b>Email Address:</b> {userInfo.email}
+                <p className="text-lg">
+                    <span className="font-medium">Email Address:</span> {userInfo.email}
                 </p>
-                <p>
-                    <b>Phone Number:</b> {userInfo.phone}
+                <p className="text-lg">
+                    <span className="font-medium">Phone Number:</span> {userInfo.phone}
                 </p>
-                <p>
-                    <b>Salary Range:</b> {userInfo.salary}
+                <p className="text-lg">
+                    <span className="font-medium">Salary Range:</span> {userInfo.salary}
                 </p>
             </div>
 
