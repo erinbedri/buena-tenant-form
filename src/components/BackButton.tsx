@@ -12,7 +12,7 @@ const BackButton: React.FC<BackButtonProps> = ({ className = "" }) => {
         <button
             type="button"
             onClick={() => navigate(-1)}
-            className={`p-2 bg-gray-300 hover:bg-gray-400 transition duration-300 ease-in-out text-gray-800 rounded-full shadow-md ${className}`}
+            className={`p-3 bg-gray-300 hover:bg-gray-400 transition duration-300 ease-in-out text-gray-800 rounded-full shadow-md ${className}`}
         >
             <svg
                 xmlns="http://www.w3.org/2000/svg"
