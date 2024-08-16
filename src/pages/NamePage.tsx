@@ -4,10 +4,11 @@ import { PATHS } from "../utils/urls";
 const NamePage: React.FC = () => {
     return (
         <Form
-            title="Enter Your Full Name"
+            title="What is your full name?"
             fieldName="fullName"
-            fieldLabel="Full Name"
+            fieldLabel="Enter your full name"
             fieldType="text"
+            placeholder="John Doe"
             nextPath={PATHS.EMAIL}
         />
     );

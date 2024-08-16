@@ -8,6 +8,7 @@ const EmailPage: React.FC = () => {
             fieldName="email"
             fieldLabel="Email Address"
             fieldType="email"
+            placeholder="johndoe@email.com"
             nextPath={PATHS.PHONE}
         />
     );

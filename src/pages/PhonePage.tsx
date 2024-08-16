@@ -9,6 +9,7 @@ const PhonePage: React.FC = () => {
             fieldLabel="Phone Number"
             fieldType="tel"
             nextPath={PATHS.SALARY}
+            placeholder="+49 151 12345678"
             pattern="^(\+49\s?)?[1-9][0-9]{1,4}\s?-?\s?[0-9]{3,9}$"
         />
     );

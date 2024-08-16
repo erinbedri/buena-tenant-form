@@ -9,12 +9,22 @@ interface FormProps {
     fieldName: string;
     fieldLabel: string;
     fieldType: string;
+    placeholder?: string;
     nextPath: string;
     pattern?: string;
     options?: string[];
 }
 
-const Form: React.FC<FormProps> = ({ title, fieldName, fieldLabel, fieldType, nextPath, pattern, options }) => {
+const Form: React.FC<FormProps> = ({
+    title,
+    fieldName,
+    fieldLabel,
+    fieldType,
+    placeholder,
+    nextPath,
+    pattern,
+    options,
+}) => {
     const { userInfo, setUserInfo } = useUserInfoContext();
     const [fieldValue, setFieldValue] = useState(userInfo[fieldName]);
 
@@ -29,8 +39,8 @@ const Form: React.FC<FormProps> = ({ title, fieldName, fieldLabel, fieldType, ne
     };
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-6">
-            <h2 className="text-3xl font-semibold mb-6">{title}</h2>
+        <div className="flex flex-col gap-10 items-center justify-center h-screen bg-gray-100 p-6">
+            <h2 className="text-3xl font-extrabold">{title}</h2>
 
             <form onSubmit={handleSubmit} className="w-full max-w-xl">
                 {fieldType === "radio" && options ? (
@@ -48,6 +58,7 @@ const Form: React.FC<FormProps> = ({ title, fieldName, fieldLabel, fieldType, ne
                         type={fieldType}
                         label={fieldLabel}
                         value={fieldValue}
+                        placeholder={placeholder}
                         onChange={(e) => setFieldValue(e.target.value)}
                         pattern={pattern}
                         required
