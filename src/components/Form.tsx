@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useUserInfoContext } from "../contexts/UserInfoContext";
-import { BackButton, Button, TextInput, RadioInput } from "../components";
+import { BackButton, Button, TextInput, RadioInput, Container } from "../components";
 
 interface FormProps {
     title: string;
@@ -39,9 +39,7 @@ const Form: React.FC<FormProps> = ({
     };
 
     return (
-        <div className="flex flex-col gap-10 items-center justify-center h-screen bg-gray-100 p-6">
-            <h2 className="text-3xl font-extrabold">{title}</h2>
-
+        <Container title={title} titleSize="text-3xl">
             <form onSubmit={handleSubmit} className="w-full max-w-xl">
                 {fieldType === "radio" && options ? (
                     <RadioInput
@@ -70,7 +68,7 @@ const Form: React.FC<FormProps> = ({
                     {fieldValue && <Button type="submit">Next</Button>}
                 </div>
             </form>
-        </div>
+        </Container>
     );
 };
 

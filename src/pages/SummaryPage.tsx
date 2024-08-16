@@ -1,13 +1,11 @@
-import { Button, BackButton } from "../components";
+import { Button, BackButton, Container } from "../components";
 import { useUserInfoContext } from "../contexts/UserInfoContext";
 
 const SummaryPage: React.FC = () => {
     const { userInfo } = useUserInfoContext();
 
     return (
-        <div className="flex flex-col gap-10 items-center justify-center h-screen bg-gray-100 p-6">
-            <h2 className="text-3xl font-extrabold">Summary</h2>
-
+        <Container title="Summary" titleSize="text-3xl">
             <div>
                 <p>
                     <b>Full Name:</b> {userInfo.fullName}
@@ -27,7 +25,7 @@ const SummaryPage: React.FC = () => {
                 <BackButton />
                 <Button type="submit">Submit</Button>
             </div>
-        </div>
+        </Container>
     );
 };
 
