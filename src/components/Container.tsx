@@ -1,7 +1,7 @@
 interface ContainerProps {
     title: string;
     titleSize: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }
 
 const Container: React.FC<ContainerProps> = ({ title, titleSize, children }) => {
