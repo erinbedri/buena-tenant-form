@@ -1,4 +1,4 @@
-import React, { useContext, useState, ReactNode } from "react";
+import React, { useContext, useState, ReactNode, useEffect } from "react";
 
 interface UserInfo {
     fullName: string;
@@ -11,6 +11,8 @@ interface UserInfo {
 interface AppContextProps {
     userInfo: UserInfo;
     setUserInfo: React.Dispatch<React.SetStateAction<UserInfo>>;
+    isSubmitted: boolean;
+    setIsSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const AppContext = React.createContext<AppContextProps | undefined>(undefined);
@@ -27,7 +29,13 @@ const UserInfoContextProvider: React.FC<UserInfoContextProviderProps> = ({ child
         salary: "",
     });
 
-    return <AppContext.Provider value={{ userInfo, setUserInfo }}>{children}</AppContext.Provider>;
+    const [isSubmitted, setIsSubmitted] = useState(false);
+
+    return (
+        <AppContext.Provider value={{ userInfo, setUserInfo, isSubmitted, setIsSubmitted }}>
+            {children}
+        </AppContext.Provider>
+    );
 };
 
 export const useUserInfoContext = () => {

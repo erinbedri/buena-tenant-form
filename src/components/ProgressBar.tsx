@@ -2,8 +2,11 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 
 import { STEPS } from "../utils/urls";
+import { useUserInfoContext } from "../contexts/UserInfoContext";
 
 const ProgressBar: React.FC = () => {
+    const { isSubmitted } = useUserInfoContext();
+
     const location = useLocation();
     const currentPath = location.pathname;
 
@@ -12,7 +15,7 @@ const ProgressBar: React.FC = () => {
 
     const progressWidth = totalSteps > 0 ? ((currentIndex + 1) / totalSteps) * 100 : 0;
 
-    if (progressWidth === 0) {
+    if (progressWidth === 0 || isSubmitted) {
         return null;
     }
 
