@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { useUserInfoContext } from "../contexts/UserInfoContext";
-import { BackButton, Button, TextInput } from "../components";
+import { BackButton, Button, TextInput, RadioInput } from "../components";
 
 interface FormProps {
     title: string;
@@ -34,25 +34,14 @@ const Form: React.FC<FormProps> = ({ title, fieldName, fieldLabel, fieldType, ne
 
             <form onSubmit={handleSubmit} className="w-full max-w-xl">
                 {fieldType === "radio" && options ? (
-                    <div className="mb-4">
-                        <label className="block text-lg font-medium mb-2">{fieldLabel}</label>
-                        {options.map((option) => (
-                            <div key={option} className="mb-2">
-                                <input
-                                    type="radio"
-                                    id={option}
-                                    name={fieldName}
-                                    value={option}
-                                    checked={fieldValue === option}
-                                    onChange={(e) => setFieldValue(e.target.value)}
-                                    className="mr-2"
-                                />
-                                <label htmlFor={option} className="text-gray-700">
-                                    {option}
-                                </label>
-                            </div>
-                        ))}
-                    </div>
+                    <RadioInput
+                        label={fieldLabel}
+                        fieldName={fieldName}
+                        options={options}
+                        selectedValue={fieldValue}
+                        onChange={(e) => setFieldValue(e.target.value)}
+                        required
+                    />
                 ) : (
                     <TextInput
                         id={fieldName}
