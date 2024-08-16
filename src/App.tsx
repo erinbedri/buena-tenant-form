@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { UserInfoContextProvider } from "./contexts/UserInfoContext";
 
 import { Header, ProgressBar } from "./components";
-import { HomePage, NamePage, EmailPage, PhonePage, SalaryPage } from "./pages";
+import { HomePage, NamePage, EmailPage, PhonePage, SalaryPage, SummaryPage } from "./pages";
 import { PATHS } from "./utils/urls";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
                     <Route path={PATHS.EMAIL} element={<EmailPage />} />
                     <Route path={PATHS.PHONE} element={<PhonePage />} />
                     <Route path={PATHS.SALARY} element={<SalaryPage />} />
-                    <Route path={PATHS.SUMMARY} element={<h1>Summary Page</h1>} />
+                    <Route path={PATHS.SUMMARY} element={<SummaryPage />} />
                 </Routes>
 
                 <ProgressBar />
