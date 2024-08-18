@@ -18,7 +18,7 @@ This project is a multi-page tenant application form built using React and TypeS
 
     ```sh
     git clone https://github.com/erinbedri/buena-tenant-form
-    cd buena-tenant-application
+    cd buena-tenant-form
     ```
 
 2. **Install dependencies**
