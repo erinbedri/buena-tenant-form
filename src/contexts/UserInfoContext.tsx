@@ -1,4 +1,5 @@
-import React, { useContext, useState, ReactNode, useEffect } from "react";
+import React, { useContext, useState, ReactNode } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface UserInfo {
     fullName: string;
@@ -13,6 +14,7 @@ interface AppContextProps {
     setUserInfo: React.Dispatch<React.SetStateAction<UserInfo>>;
     isSubmitted: boolean;
     setIsSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
+    reset: (navigate: (path: string) => void) => void; // Update reset type to accept a navigate function
 }
 
 const AppContext = React.createContext<AppContextProps | undefined>(undefined);
@@ -31,8 +33,19 @@ const UserInfoContextProvider: React.FC<UserInfoContextProviderProps> = ({ child
 
     const [isSubmitted, setIsSubmitted] = useState(false);
 
+    const reset = (navigate: (path: string) => void) => {
+        setIsSubmitted(false);
+        setUserInfo({
+            fullName: "",
+            email: "",
+            phone: "",
+            salary: "",
+        });
+        navigate("/"); // Navigate to home page after reset
+    };
+
     return (
-        <AppContext.Provider value={{ userInfo, setUserInfo, isSubmitted, setIsSubmitted }}>
+        <AppContext.Provider value={{ userInfo, setUserInfo, isSubmitted, setIsSubmitted, reset }}>
             {children}
         </AppContext.Provider>
     );
