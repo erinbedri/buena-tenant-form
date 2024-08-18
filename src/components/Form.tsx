@@ -27,14 +27,21 @@ const Form: React.FC<FormProps> = ({
 }) => {
     const { userInfo, setUserInfo } = useUserInfoContext();
     const [fieldValue, setFieldValue] = useState(userInfo[fieldName]);
+    const [error, setError] = useState<string | null>(null);
 
     const navigate = useNavigate();
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        setUserInfo({ ...userInfo, [fieldName]: fieldValue });
+        if (!fieldValue) {
+            setError("This field is required.");
+            return;
+        }
 
+        setError(null);
+
+        setUserInfo({ ...userInfo, [fieldName]: fieldValue });
         navigate(nextPath);
     };
 
@@ -63,9 +70,11 @@ const Form: React.FC<FormProps> = ({
                     />
                 )}
 
+                {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+
                 <div className="flex justify-center gap-5">
                     <BackButton />
-                    {fieldValue && <Button type="submit">Next</Button>}
+                    {fieldValue && !error && <Button type="submit">Next</Button>}
                 </div>
             </form>
         </Container>
