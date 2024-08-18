@@ -2,7 +2,7 @@ import React from "react";
 
 interface TextInputProps {
     type: string;
-    label: string;
+    label?: string;
     id: string;
     value: string;
     placeholder?: string;

@@ -1,7 +1,7 @@
 import React from "react";
 
 interface RadioInputProps {
-    label: string;
+    label?: string;
     fieldName: string;
     options: string[];
     selectedValue: string;
@@ -10,7 +10,7 @@ interface RadioInputProps {
 }
 
 const RadioInput: React.FC<RadioInputProps> = ({
-    label: fieldLabel,
+    label,
     fieldName,
     options,
     selectedValue,
@@ -19,7 +19,7 @@ const RadioInput: React.FC<RadioInputProps> = ({
 }) => {
     return (
         <div className="mb-6">
-            <label className="block text-lg font-medium mb-4">{fieldLabel}</label>
+            {label && <label className="block text-lg font-medium mb-2">{label}</label>}
             <div className="flex flex-col gap-3">
                 {options.map((option) => (
                     <div key={option} className="flex items-center">

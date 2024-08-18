@@ -6,7 +6,6 @@ const NamePage: React.FC = () => {
         <Form
             title="What is your full name?"
             fieldName="fullName"
-            fieldLabel="Enter your full name"
             fieldType="text"
             placeholder="John Doe"
             nextPath={PATHS.EMAIL}

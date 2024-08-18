@@ -7,7 +7,7 @@ import { BackButton, Button, TextInput, RadioInput, Container } from "../compone
 interface FormProps {
     title: string;
     fieldName: string;
-    fieldLabel: string;
+    fieldLabel?: string;
     fieldType: string;
     placeholder?: string;
     nextPath: string;

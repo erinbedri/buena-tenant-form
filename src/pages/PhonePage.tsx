@@ -6,7 +6,6 @@ const PhonePage: React.FC = () => {
         <Form
             title="Enter Your Phone Number"
             fieldName="phone"
-            fieldLabel="Phone Number"
             fieldType="tel"
             nextPath={PATHS.SALARY}
             placeholder="+49 151 12345678"
